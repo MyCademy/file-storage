@@ -1,5 +1,5 @@
 {
-    "name": "MyCademy/yii2-file-storage",
+    "name": "mycademy/yii2-file-storage",
     "description": "File storage abstraction layer for Yii2",
     "keywords": ["yii2", "file", "storage", "abstraction", "amazon", "S3", "mongodb", "gridfs", "ssh", "sftp"],
     "type": "yii2-extension",
