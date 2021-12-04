@@ -1,18 +1,13 @@
-<p align="center">
-    <a href="https://github.com/yii2tech" target="_blank">
-        <img src="https://avatars2.githubusercontent.com/u/12951949" height="100px">
-    </a>
-    <h1 align="center">File Storage Extension for Yii 2</h1>
-    <br>
-</p>
+This extension provides a file storage abstraction layer for Yii2.  
 
-This extension provides file storage abstraction layer for Yii2.
+It's forked from https://github.com/yii2tech/file-storage by [@klimov-paul](https://github.com/klimov-paul)
+Since the original repository has been archived, this forks aims to contignue development and keep compatibility with newer versions of it's depencies (e.g. aws-sdk-php).
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
-[![Latest Stable Version](https://poser.pugx.org/yii2tech/file-storage/v/stable.png)](https://packagist.org/packages/yii2tech/file-storage)
-[![Total Downloads](https://poser.pugx.org/yii2tech/file-storage/downloads.png)](https://packagist.org/packages/yii2tech/file-storage)
-[![Build Status](https://travis-ci.org/yii2tech/file-storage.svg?branch=master)](https://travis-ci.org/yii2tech/file-storage)
+[![Latest Stable Version](https://poser.pugx.org/mycademy/yii2-file-storage/v/stable.png)](https://packagist.org/packages/mycademy/yii2-file-storage)
+[![Total Downloads](https://poser.pugx.org/mycademy/yii2-file-storage/downloads.png)](https://packagist.org/packages/mycademy/yii2-file-storage)
+[![Build Status](https://travis-ci.org/mycademy/yii2-file-storage.svg?branch=master)](https://travis-ci.org/mycademy/yii2-file-storage)
 
 
 Installation
@@ -23,13 +18,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist yii2tech/file-storage
+php composer.phar require --prefer-dist mycademy/yii2-file-storage
 ```
 
 or add
 
 ```json
-"yii2tech/file-storage": "*"
+"mycademy/yii2-file-storage": "*"
 ```
 
 to the require section of your composer.json.
