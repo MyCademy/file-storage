@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage;
+namespace mycademy\tests\unit\yii2filestorage;
 
 use Yii;
 use yii\web\Controller;
-use yii2tech\filestorage\DownloadAction;
-use yii2tech\filestorage\local\Storage;
+use mycademy\yii2filestorage\DownloadAction;
+use mycademy\yii2filestorage\local\Storage;
 
 class DownloadActionTest extends TestCase
 {

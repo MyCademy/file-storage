@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\local;
+namespace mycademy\tests\unit\yii2filestorage\local;
 
 use Yii;
-use yii2tech\filestorage\local\Storage;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\local\Storage;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * Test case for the extension [[Storage]].

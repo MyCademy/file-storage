@@ -5,12 +5,12 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\amazon;
+namespace mycademy\yii2filestorage\amazon;
 
 use Aws\Credentials\Credentials;
 use Aws\S3\S3Client;
 use yii\base\InvalidConfigException;
-use yii2tech\filestorage\BaseStorage;
+use mycademy\yii2filestorage\BaseStorage;
 
 /**
  * Storage introduces the file storage based on Amazon Simple Storage Service (S3).
@@ -25,7 +25,7 @@ use yii2tech\filestorage\BaseStorage;
  *
  * ```php
  * 'fileStorage' => [
- *     'class' => 'yii2tech\filestorage\amazon\Storage',
+ *     'class' => 'mycademy\yii2filestorage\amazon\Storage',
  *     'awsKey' => 'AWSKEY',
  *     'awsSecretKey' => 'AWSSECRETKEY',
  *     'buckets' => [
@@ -55,7 +55,7 @@ class Storage extends BaseStorage
     /**
      * {@inheritdoc}
      */
-    public $bucketClassName = 'yii2tech\filestorage\amazon\Bucket';
+    public $bucketClassName = 'mycademy\yii2filestorage\amazon\Bucket';
     /**
      * @var string AWS (Amazon Web Service) key.
      * If constant 'AWS_KEY' has been defined, this field can be left blank.

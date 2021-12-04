@@ -5,10 +5,10 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\sftp;
+namespace mycademy\yii2filestorage\sftp;
 
 use yii\di\Instance;
-use yii2tech\filestorage\BaseStorage;
+use mycademy\yii2filestorage\BaseStorage;
 
 /**
  * Storage introduces the file storage based on the SSH2 SFTP
@@ -19,7 +19,7 @@ use yii2tech\filestorage\BaseStorage;
  *
  * ```php
  * 'fileStorage' => [
- *     'class' => 'yii2tech\filestorage\sftp\Storage',
+ *     'class' => 'mycademy\yii2filestorage\sftp\Storage',
  *     'ssh' => [
  *         'host' => 'file.server.com',
  *         'port' => 22,
@@ -55,7 +55,7 @@ class Storage extends BaseStorage
     /**
      * {@inheritdoc}
      */
-    public $bucketClassName = 'yii2tech\filestorage\sftp\Bucket';
+    public $bucketClassName = 'mycademy\yii2filestorage\sftp\Bucket';
     /**
      * @var Connection|array|string the SSH connection object or the application component ID of the SSH connection.
      * After the Storage object is created, if you want to change this property, you should only assign it

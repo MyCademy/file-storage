@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\sftp;
+namespace mycademy\tests\unit\yii2filestorage\sftp;
 
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * @group sftp

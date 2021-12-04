@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\sftp;
+namespace mycademy\tests\unit\yii2filestorage\sftp;
 
-use yii2tech\filestorage\sftp\Connection;
-use yii2tech\filestorage\sftp\Storage;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\sftp\Connection;
+use mycademy\yii2filestorage\sftp\Storage;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * @group sftp

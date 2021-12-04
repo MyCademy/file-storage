@@ -29,7 +29,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "yii2tech\\filestorage\\": "src" }
+        "psr-4": { "mycademy\\yii2filestorage\\": "src" }
     },
     "extra": {
         "branch-alias": {

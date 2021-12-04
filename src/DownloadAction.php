@@ -5,7 +5,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage;
+namespace mycademy\yii2filestorage;
 
 use Yii;
 use yii\base\Action;
@@ -18,7 +18,7 @@ use yii\web\Response;
  * DownloadAction provides the web access for the files stored in the file storage.
  *
  * This action can be used in case particular storage does not provide native support for files web access,
- * like [[\yii2tech\filestorage\mongodb\Storage]], or in case you want to restrict web access for the stored files,
+ * like [[\mycademy\yii2filestorage\mongodb\Storage]], or in case you want to restrict web access for the stored files,
  * for example: allow access only for the logged in user.
  *
  * Configuration example:
@@ -30,7 +30,7 @@ use yii\web\Response;
  *     {
  *         return [
  *             'download' => [
- *                 'class' => 'yii2tech\filestorage\DownloadAction',
+ *                 'class' => 'mycademy\yii2filestorage\DownloadAction',
  *             ],
  *         ];
  *     }
@@ -69,7 +69,7 @@ class DownloadAction extends Action
      * This value can be specified as a PHP callback of following signature:
      *
      * ```php
-     * function (\yii2tech\filestorage\BucketInterface $bucket, string $filename) {
+     * function (\mycademy\yii2filestorage\BucketInterface $bucket, string $filename) {
      *     //return bool whether file should be send inline or not
      * }
      * ```
@@ -92,7 +92,7 @@ class DownloadAction extends Action
             throw new NotFoundHttpException("Bucket '{$bucket}' does not exist.");
         }
 
-        $this->fileStorage = Instance::ensure($this->fileStorage, 'yii2tech\filestorage\StorageInterface');
+        $this->fileStorage = Instance::ensure($this->fileStorage, 'mycademy\yii2filestorage\StorageInterface');
 
         if (!$this->fileStorage->hasBucket($bucket)) {
             throw new NotFoundHttpException("Bucket '{$bucket}' does not exist.");

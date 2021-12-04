@@ -5,13 +5,13 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\hub;
+namespace mycademy\yii2filestorage\hub;
 
 use Yii;
 use yii\base\Component;
 use yii\base\Exception;
 use yii\base\InvalidParamException;
-use yii2tech\filestorage\StorageInterface;
+use mycademy\yii2filestorage\StorageInterface;
 
 /** 
  * Storage introduces the complex file storage, which combines
@@ -25,17 +25,17 @@ use yii2tech\filestorage\StorageInterface;
  *
  * ```php
  * 'fileStorage' => [
- *     'class' => 'yii2tech\filestorage\hub\Storage',
+ *     'class' => 'mycademy\yii2filestorage\hub\Storage',
  *     'storages' => [
  *         [
- *             'class' => 'yii2tech\filestorage\local\Storage',
+ *             'class' => 'mycademy\yii2filestorage\local\Storage',
  *             ...
  *             'buckets' => [
  *                 'fileSystemBucket' => [...],
  *             ],
  *         ],
  *         [
- *             'class' => 'yii2tech\filestorage\ftp\Storage',
+ *             'class' => 'mycademy\yii2filestorage\ftp\Storage',
  *             ...
  *             'buckets' => [
  *                 'ftpBucket' => [...],

@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\mongodb;
+namespace mycademy\tests\unit\yii2filestorage\mongodb;
 
 use yii\mongodb\file\Collection;
-use yii2tech\filestorage\mongodb\Storage;
-use yii2tech\filestorage\mongodb\Bucket;
-use yii2tech\tests\unit\filestorage\BucketTestTrait;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\mongodb\Storage;
+use mycademy\yii2filestorage\mongodb\Bucket;
+use mycademy\tests\unit\yii2filestorage\BucketTestTrait;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * @group mongodb

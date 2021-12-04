@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage;
+namespace mycademy\tests\unit\yii2filestorage;
 
 use yii\helpers\ArrayHelper;
 use Yii;
@@ -21,7 +21,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected $mongodb;
     /**
-     * @var \yii2tech\filestorage\sftp\Connection SSH connection instance.
+     * @var \mycademy\yii2filestorage\sftp\Connection SSH connection instance.
      */
     protected $ssh;
 
@@ -124,7 +124,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
     /**
      * @param bool $reset whether to clean up the test connection
-     * @return \yii2tech\filestorage\sftp\Connection SFTP connection instance.
+     * @return \mycademy\yii2filestorage\sftp\Connection SFTP connection instance.
      */
     public function getSsh($reset = false)
     {
@@ -134,7 +134,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
         $config = self::getParam('ssh');
 
-        $sftp = new \yii2tech\filestorage\sftp\Connection($config);
+        $sftp = new \mycademy\yii2filestorage\sftp\Connection($config);
 
         $this->ssh = $sftp;
 
@@ -147,7 +147,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
      */
     public function getTestTmpPath()
     {
-        return Yii::getAlias('@yii2tech/tests/unit/filestorage/runtime/test_file_storage_tmp');
+        return Yii::getAlias('@mycademy/tests/unit/yii2filestorage/runtime/test_file_storage_tmp');
     }
 
     /**

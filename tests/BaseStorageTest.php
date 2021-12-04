@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage;
+namespace mycademy\tests\unit\yii2filestorage;
 
-use yii2tech\filestorage\BaseStorage;
-use yii2tech\filestorage\BaseBucket;
+use mycademy\yii2filestorage\BaseStorage;
+use mycademy\yii2filestorage\BaseBucket;
 
 /**
  * Test case for the extension [[BaseStorage]].
@@ -19,7 +19,7 @@ class BaseStorageTest extends TestCase
         $methodsList = [
             'init',
         ];
-        $fileStorage = $this->getMockBuilder('yii2tech\filestorage\BaseStorage')
+        $fileStorage = $this->getMockBuilder('mycademy\yii2filestorage\BaseStorage')
             ->setMethods($methodsList)
             ->getMock();
         return $fileStorage;
@@ -47,7 +47,7 @@ class BaseStorageTest extends TestCase
             'getFileUrl',
             'openFile',
         ];
-        $bucket = $this->getMockBuilder('yii2tech\filestorage\BaseBucket')
+        $bucket = $this->getMockBuilder('mycademy\yii2filestorage\BaseBucket')
             ->setMethods($methodsList)
             ->getMock();
         return $bucket;

@@ -5,10 +5,10 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\mongodb;
+namespace mycademy\yii2filestorage\mongodb;
 
 use yii\base\InvalidParamException;
-use yii2tech\filestorage\BaseBucket;
+use mycademy\yii2filestorage\BaseBucket;
 
 /**
  * Bucket introduces the file storage bucket based simply on the [MongoDB](http://www.mongodb.org/) [GridFS](http://docs.mongodb.org/manual/core/gridfs/).
@@ -17,8 +17,8 @@ use yii2tech\filestorage\BaseBucket;
  *
  * ```php
  * 'fileStorage' => [
- *     'class' => 'yii2tech\filestorage\mongodb\Storage',
- *     'baseUrl' => ['/file/download'], // should lead to `\yii2tech\filestorage\DownloadAction`
+ *     'class' => 'mycademy\yii2filestorage\mongodb\Storage',
+ *     'baseUrl' => ['/file/download'], // should lead to `\mycademy\yii2filestorage\DownloadAction`
  *     'buckets' => [
  *         'tempFiles' => [
  *             'collectionPrefix' => 'temp',

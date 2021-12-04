@@ -8,6 +8,16 @@ if you want to upgrade from version A to version C and there is
 version B between A and C, you need to following the instructions
 for both A and B.
 
+Upgrade from 1.1
+----------------
+From version 1.2 the namespace was changed to `mycademy\yii2filestorage` to reflect the fork from
+https://github.com/yii2tech/file-storage.
+Import statements should be updated, e.g.:
+`yii2tech\filestorage\amazon\Storage`  
+should become  
+`mycademy\yii2filestorage\amazon\Storage`
+
+
 Upgrade from 1.0.1
 ----------------------
 

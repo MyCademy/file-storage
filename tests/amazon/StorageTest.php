@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\amazon;
+namespace mycademy\tests\unit\yii2filestorage\amazon;
 
-use yii2tech\filestorage\amazon\Storage;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\amazon\Storage;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * Test case for [[Storage]]

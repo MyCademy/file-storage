@@ -5,7 +5,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage;
+namespace mycademy\yii2filestorage;
 
 use Yii;
 use yii\base\Component;
@@ -31,7 +31,7 @@ abstract class BaseStorage extends Component implements StorageInterface
     /**
      * @var string name of the bucket class.
      */
-    public $bucketClassName = 'yii2tech\filestorage\BaseBucket';
+    public $bucketClassName = 'mycademy\yii2filestorage\BaseBucket';
 
     /**
      * @var BucketInterface[] list of buckets.

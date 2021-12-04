@@ -5,10 +5,10 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\sftp;
+namespace mycademy\yii2filestorage\sftp;
 
 use yii\log\Logger;
-use yii2tech\filestorage\BucketSubDirTemplate;
+use mycademy\yii2filestorage\BucketSubDirTemplate;
 
 /**
  * Bucket introduces the file storage bucket based simply on the SSH2 SFTP

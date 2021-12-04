@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\hub;
+namespace mycademy\tests\unit\yii2filestorage\hub;
 
 use Yii;
-use yii2tech\filestorage\hub\Storage;
-use yii2tech\filestorage\local\Bucket;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\hub\Storage;
+use mycademy\yii2filestorage\local\Bucket;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * Test case for the extension [[Storage]].
@@ -23,7 +23,7 @@ class StorageTest extends TestCase
         $methodsList = [
             'init',
         ];
-        $fileStorage = $this->getMockBuilder(\yii2tech\filestorage\local\Storage::className())
+        $fileStorage = $this->getMockBuilder(\mycademy\yii2filestorage\local\Storage::className())
             ->setMethods($methodsList)
             ->getMock();
         return $fileStorage;

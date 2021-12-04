@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\mongodb;
+namespace mycademy\tests\unit\yii2filestorage\mongodb;
 
 use yii\mongodb\Connection;
-use yii2tech\filestorage\mongodb\Storage;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\mongodb\Storage;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * @group mongodb

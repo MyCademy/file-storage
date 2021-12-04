@@ -5,12 +5,12 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\local;
+namespace mycademy\yii2filestorage\local;
 
 use yii\base\Exception;
 use yii\helpers\FileHelper;
 use yii\log\Logger;
-use yii2tech\filestorage\BucketSubDirTemplate;
+use mycademy\yii2filestorage\BucketSubDirTemplate;
 
 /** 
  * Bucket introduces the file storage bucket based simply on the OS local file system.
@@ -19,7 +19,7 @@ use yii2tech\filestorage\BucketSubDirTemplate;
  *
  * ```php
  * 'fileStorage' => [
- *     'class' => 'yii2tech\filestorage\local\Storage',
+ *     'class' => 'mycademy\yii2filestorage\local\Storage',
  *     'basePath' => '@webroot/files',
  *     'baseUrl' => '@web/files',
  *     'filePermission' => 0777,

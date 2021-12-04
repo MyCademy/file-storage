@@ -5,7 +5,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\sftp;
+namespace mycademy\yii2filestorage\sftp;
 
 use Yii;
 use yii\base\Component;

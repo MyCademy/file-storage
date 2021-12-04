@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage;
+namespace mycademy\tests\unit\yii2filestorage;
 
-use yii2tech\filestorage\BucketSubDirTemplate;
+use mycademy\yii2filestorage\BucketSubDirTemplate;
 
 /**
  * Test case for the extension [[BucketSubDirTemplate]].
@@ -33,7 +33,7 @@ class BucketSubDirTemplateTest extends TestCase
             'getFileUrl',
             'openFile',
         ];
-        $bucket = $this->getMockBuilder('yii2tech\filestorage\BucketSubDirTemplate')
+        $bucket = $this->getMockBuilder('mycademy\yii2filestorage\BucketSubDirTemplate')
             ->setMethods($methodsList)
             ->getMock();
         return $bucket;

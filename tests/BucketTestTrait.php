@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage;
+namespace mycademy\tests\unit\yii2filestorage;
 
 use Yii;
-use yii2tech\filestorage\BaseBucket;
-use yii2tech\filestorage\BaseStorage;
+use mycademy\yii2filestorage\BaseBucket;
+use mycademy\yii2filestorage\BaseStorage;
 
 trait BucketTestTrait
 {

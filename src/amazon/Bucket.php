@@ -5,7 +5,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\amazon;
+namespace mycademy\yii2filestorage\amazon;
 
 use Aws\S3\BatchDelete;
 use Aws\S3\S3Client;
@@ -13,7 +13,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\log\Logger;
-use yii2tech\filestorage\BucketSubDirTemplate;
+use mycademy\yii2filestorage\BucketSubDirTemplate;
 
 /**
  * Bucket introduces the bucket of file storage based on

@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\local;
+namespace mycademy\tests\unit\yii2filestorage\local;
 
 use Yii;
 use yii\helpers\FileHelper;
-use yii2tech\filestorage\local\Storage;
-use yii2tech\filestorage\local\Bucket;
-use yii2tech\tests\unit\filestorage\BucketTestTrait;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\local\Storage;
+use mycademy\yii2filestorage\local\Bucket;
+use mycademy\tests\unit\yii2filestorage\BucketTestTrait;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * @group local
@@ -46,7 +46,7 @@ class BucketTest extends TestCase
      */
     protected function getTestBasePath()
     {
-        return Yii::getAlias('@yii2tech/tests/unit/filestorage/runtime') . DIRECTORY_SEPARATOR . 'test_file_storage';
+        return Yii::getAlias('@mycademy/tests/unit/yii2filestorage/runtime') . DIRECTORY_SEPARATOR . 'test_file_storage';
     }
 
     /**

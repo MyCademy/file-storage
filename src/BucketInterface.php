@@ -5,7 +5,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage;
+namespace mycademy\yii2filestorage;
 
 /** 
  * BucketInterface is an interface for the all file storage buckets.

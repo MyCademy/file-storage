@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\amazon;
+namespace mycademy\tests\unit\yii2filestorage\amazon;
 
 use yii\helpers\FileHelper;
 use Yii;
-use yii2tech\filestorage\amazon\Bucket;
-use yii2tech\filestorage\amazon\Storage;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\amazon\Bucket;
+use mycademy\yii2filestorage\amazon\Storage;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * Test case for [[Bucket]]

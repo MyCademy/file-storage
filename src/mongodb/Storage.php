@@ -5,11 +5,11 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\filestorage\mongodb;
+namespace mycademy\yii2filestorage\mongodb;
 
 use yii\di\Instance;
 use yii\mongodb\Connection;
-use yii2tech\filestorage\BaseStorage;
+use mycademy\yii2filestorage\BaseStorage;
 
 /**
  * Storage introduces the file storage based on the [MongoDB](http://www.mongodb.org/) [GridFS](http://docs.mongodb.org/manual/core/gridfs/).
@@ -30,9 +30,9 @@ use yii2tech\filestorage\BaseStorage;
  *     'dsn' => 'mongodb://developer:password@localhost:27017/mydatabase',
  * ],
  * 'fileStorage' => [
- *     'class' => 'yii2tech\filestorage\mongodb\Storage',
+ *     'class' => 'mycademy\yii2filestorage\mongodb\Storage',
  *     'db' => 'mongodb',
- *     'baseUrl' => ['/file/download'], // should lead to `\yii2tech\filestorage\DownloadAction`
+ *     'baseUrl' => ['/file/download'], // should lead to `\mycademy\yii2filestorage\DownloadAction`
  *     'buckets' => [
  *         'tempFiles' => [
  *             'collectionPrefix' => 'temp',
@@ -45,11 +45,11 @@ use yii2tech\filestorage\BaseStorage;
  * ```
  *
  * Note: MongoDB GridFS does not provide any build in URL access for the files. Thus you'll to setup
- * [[\yii2tech\filestorage\DownloadAction]] at some of your controllers and set [[baseUrl]] as a route to it,
+ * [[\mycademy\yii2filestorage\DownloadAction]] at some of your controllers and set [[baseUrl]] as a route to it,
  * in case you need web access for the stored files.
  *
  * @see http://docs.mongodb.org/manual/core/gridfs/
- * @see \yii2tech\filestorage\DownloadAction
+ * @see \mycademy\yii2filestorage\DownloadAction
  *
  * @method Bucket getBucket($bucketName)
  *
@@ -61,7 +61,7 @@ class Storage extends BaseStorage
     /**
      * {@inheritdoc}
      */
-    public $bucketClassName = 'yii2tech\filestorage\mongodb\Bucket';
+    public $bucketClassName = 'mycademy\yii2filestorage\mongodb\Bucket';
     /**
      * @var Connection|array|string the MongoDB connection object or the application component ID of the MongoDB connection.
      * After the Storage object is created, if you want to change this property, you should only assign it

@@ -76,7 +76,7 @@ Example application configuration:
 return [
     'components' => [
         'fileStorage' => [
-            'class' => 'yii2tech\filestorage\local\Storage',
+            'class' => 'mycademy\yii2filestorage\local\Storage',
             'basePath' => '@webroot/files',
             'baseUrl' => '@web/files',
             'dirPermission' => 0775,
@@ -112,11 +112,11 @@ echo $bucket->getFileUrl('file.txt'); // outputs: 'http://domain.com/files/f/i/f
 ```
 
 Following file storages are available with this extension:
- - [[\yii2tech\filestorage\local\Storage]] - stores files on the OS local file system.
- - [[\yii2tech\filestorage\sftp\Storage]] - stores files using SSH2 SFTP.
- - [[\yii2tech\filestorage\amazon\Storage]] - stores files using Amazon simple storage service (S3).
- - [[\yii2tech\filestorage\mongodb\Storage]] - stores files using MongoDB GridFS.
- - [[\yii2tech\filestorage\hub\Storage]] - allows combination of different file storages.
+ - [[\mycademy\yii2filestorage\local\Storage]] - stores files on the OS local file system.
+ - [[\mycademy\yii2filestorage\sftp\Storage]] - stores files using SSH2 SFTP.
+ - [[\mycademy\yii2filestorage\amazon\Storage]] - stores files using Amazon simple storage service (S3).
+ - [[\mycademy\yii2filestorage\mongodb\Storage]] - stores files using MongoDB GridFS.
+ - [[\mycademy\yii2filestorage\hub\Storage]] - allows combination of different file storages.
 
 Please refer to the particular storage class for more details.
 
@@ -136,7 +136,7 @@ config looks like following:
 return [
     'components' => [
         'fileStorage' => [
-            'class' => 'yii2tech\filestorage\sftp\Storage',
+            'class' => 'mycademy\yii2filestorage\sftp\Storage',
             'ssh' => [
                 'host' => 'file.server.com',
                 'username' => 'user',
@@ -161,7 +161,7 @@ However, at development environment you may use simple local file storage instea
 return [
     'components' => [
         'fileStorage' => [
-            'class' => 'yii2tech\filestorage\local\Storage',
+            'class' => 'mycademy\yii2filestorage\local\Storage',
             'basePath' => '@webroot/files',
             'baseUrl' => '@web/files',
             'buckets' => [
@@ -182,7 +182,7 @@ but will be stored in the `my-image-bucket` bucket.
 return [
     'components' => [
         'fileStorage' => [
-            'class' => 'yii2tech\filestorage\amazon\Storage',
+            'class' => 'mycademy\yii2filestorage\amazon\Storage',
             'buckets' => [
                 'buckets' => [
                     'images' => [
@@ -198,16 +198,16 @@ return [
 ];
 ```
 
-You can also combine several different storages using [[\yii2tech\filestorage\hub\Storage]], if necessary:
+You can also combine several different storages using [[\mycademy\yii2filestorage\hub\Storage]], if necessary:
 
 ```php
 return [
     'components' => [
         'fileStorage' => [
-            'class' => 'yii2tech\filestorage\hub\Storage',
+            'class' => 'mycademy\yii2filestorage\hub\Storage',
             'storages' => [
                 [
-                    'class' => 'yii2tech\filestorage\sftp\Storage',
+                    'class' => 'mycademy\yii2filestorage\sftp\Storage',
                     'ssh' => [
                         'host' => 'file.server.com',
                         'username' => 'user',
@@ -220,7 +220,7 @@ return [
                     ]
                 ],
                 [
-                    'class' => 'yii2tech\filestorage\local\Storage',
+                    'class' => 'mycademy\yii2filestorage\local\Storage',
                     'basePath' => '@webroot/files',
                     'baseUrl' => '@web/files',
                     'buckets' => [
@@ -239,11 +239,11 @@ return [
 ## Accessing files by URL <span id="accessing-files-by-url"></span>
 
 Almost all file storage implementation, implemented in this extension, provide mechanism for accessing stored files
-via web URL. Actual mechanism implementation may vary depending on particular storage. For example: [[\yii2tech\filestorage\local\Storage]]
+via web URL. Actual mechanism implementation may vary depending on particular storage. For example: [[\mycademy\yii2filestorage\local\Storage]]
 allows setup of the URL leading to its root folder, creating URL for particular file appending its name to base URL,
-while [[\yii2tech\filestorage\amazon\Storage]] uses S3 built-in object URL composition.
+while [[\mycademy\yii2filestorage\amazon\Storage]] uses S3 built-in object URL composition.
 
-In order to get URL leading to the stored file, you should use [[\yii2tech\filestorage\BucketInterface::getFileUrl()]] method:
+In order to get URL leading to the stored file, you should use [[\mycademy\yii2filestorage\BucketInterface::getFileUrl()]] method:
 
 ```php
 $bucket = Yii::$app->fileStorage->getBucket('tempFiles');
@@ -259,7 +259,7 @@ route, which leads to the Yii controller action, which will return the file cont
 return [
     'components' => [
         'fileStorage' => [
-            'class' => 'yii2tech\filestorage\local\Storage',
+            'class' => 'mycademy\yii2filestorage\local\Storage',
             'baseUrl' => ['/file/download'],
             // ...
         ],
@@ -282,7 +282,7 @@ $manualUrl = Url::to(['/file/download', 'bucket' => 'images', 'filename' => 'log
 var_dump($fileUrl === $manualUrl); // outputs `true`
 ```
 
-You may setup [[\yii2tech\filestorage\DownloadAction]] to handle file content web access. For example:
+You may setup [[\mycademy\yii2filestorage\DownloadAction]] to handle file content web access. For example:
 
 ```php
 class FileController extends \yii\web\Controller
@@ -291,7 +291,7 @@ class FileController extends \yii\web\Controller
     {
         return [
             'download' => [
-                'class' => 'yii2tech\filestorage\DownloadAction',
+                'class' => 'mycademy\yii2filestorage\DownloadAction',
             ],
         ];
     }
@@ -304,9 +304,9 @@ class FileController extends \yii\web\Controller
 
 ## Processing of the large files <span id="processing-of-the-large-files"></span>
 
-Saving or reading large files, like > 100 MB, using such methods like [[\yii2tech\filestorage\BucketInterface::saveFileContent()]] or
-[[\yii2tech\filestorage\BucketInterface::getFileContent()]], may easily exceed PHP memory limit, breaking the script.
-You should use [[\yii2tech\filestorage\BucketInterface::openFile()]] method to create a file resource similar to the one
+Saving or reading large files, like > 100 MB, using such methods like [[\mycademy\yii2filestorage\BucketInterface::saveFileContent()]] or
+[[\mycademy\yii2filestorage\BucketInterface::getFileContent()]], may easily exceed PHP memory limit, breaking the script.
+You should use [[\mycademy\yii2filestorage\BucketInterface::openFile()]] method to create a file resource similar to the one
 created via [[fopen()]] PHP function. Such resource can be read or written by blocks, keeping memory usage low.
 For example:
 
@@ -334,7 +334,7 @@ fclose($resource);
 
 Each file operation performed by file storage component is logged.
 In order to setup a log target, which can capture all entries related to file storage, you should
-use category `yii2tech\filestorage\*`. For example:
+use category `mycademy\yii2filestorage\*`. For example:
 
 ```php
 return [
@@ -347,7 +347,7 @@ return [
                 [
                     'class' => 'yii\log\FileTarget',
                     'logFile' => '@runtime/logs/file-storage.log',
-                    'categories' => ['yii2tech\filestorage\*'],
+                    'categories' => ['mycademy\yii2filestorage\*'],
                 ],
                 // ...
             ],

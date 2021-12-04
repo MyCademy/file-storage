@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2tech\tests\unit\filestorage\sftp;
+namespace mycademy\tests\unit\yii2filestorage\sftp;
 
-use yii2tech\filestorage\sftp\Bucket;
-use yii2tech\filestorage\sftp\Storage;
-use yii2tech\tests\unit\filestorage\BucketTestTrait;
-use yii2tech\tests\unit\filestorage\TestCase;
+use mycademy\yii2filestorage\sftp\Bucket;
+use mycademy\yii2filestorage\sftp\Storage;
+use mycademy\tests\unit\yii2filestorage\BucketTestTrait;
+use mycademy\tests\unit\yii2filestorage\TestCase;
 
 /**
  * @group sftp
