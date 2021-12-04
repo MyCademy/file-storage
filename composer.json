@@ -1,19 +1,22 @@
 {
-    "name": "yii2tech/file-storage",
+    "name": "MyCademy/yii2-file-storage",
     "description": "File storage abstraction layer for Yii2",
     "keywords": ["yii2", "file", "storage", "abstraction", "amazon", "S3", "mongodb", "gridfs", "ssh", "sftp"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yii2tech/file-storage/issues",
+        "issues": "https://github.com/MyCademy/yii2-file-storage/issues",
         "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "https://github.com/yii2tech/file-storage/wiki",
-        "source": "https://github.com/yii2tech/file-storage"
+        "wiki": "https://github.com/MyCademy/yii2-file-storage/wiki",
+        "source": "https://github.com/MyCademy/yii2-file-storage"
     },
     "authors": [
         {
             "name": "Paul Klimov",
             "email": "klimov.paul@gmail.com"
+        },
+        {
+            "name": "MyCademy"
         }
     ],
     "require": {
