@@ -1,11 +1,11 @@
 Yii 2 File Storage extension Change Log
 =======================================
 
-1.2.0, Under development
+1.2.0, December 4, 2021 (Fork from https://github.com/yii2tech/file-storage)
 ------------------------
 
-- Enh #24: Add support to set a custom name for a bucket (rhertogh)
-- Enh #25: Amazon aws-sdk-php v3 compatibility (leandrogehlen, rhertogh)
+- Enh: Add support to set a custom name for a bucket (rhertogh)
+- Enh: Amazon aws-sdk-php v3 compatibility (leandrogehlen, rhertogh)
 
 
 1.1.4, February 9, 2018
