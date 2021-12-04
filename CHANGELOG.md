@@ -4,6 +4,7 @@ Yii 2 File Storage extension Change Log
 1.2.0, Under development
 ------------------------
 
+- Enh #24: Add support to set a custom name for a bucket (rhertogh)
 - Enh #25: Amazon aws-sdk-php v3 compatibility (leandrogehlen, rhertogh)
 
 
