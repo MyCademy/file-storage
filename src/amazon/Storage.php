@@ -7,6 +7,7 @@
 
 namespace yii2tech\filestorage\amazon;
 
+use Aws\Credentials\Credentials;
 use Aws\S3\S3Client;
 use yii\base\InvalidConfigException;
 use yii2tech\filestorage\BaseStorage;
@@ -116,8 +117,7 @@ class Storage extends BaseStorage
         $credentials = [];
         if (!empty($this->awsKey) && !empty($this->awsSecretKey)) {
             $credentials = [
-                'key' => $this->awsKey,
-                'secret' => $this->awsSecretKey,
+                'credentials' => new Credentials($this->awsKey, $this->awsSecretKey),
             ];
         }
 
