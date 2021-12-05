@@ -334,14 +334,14 @@ class Bucket extends BucketSubDirTemplate
     /**
      * {@inheritdoc}
      */
-    public function copyFileInternal($srcFile, $destFile)
+    public function copyFileInternal($srcFile, $destFile, $metaData = [])
     {
         if ($this->autoCreateBucket && !$this->exists()) {
             $this->create();
         }
 
         $storage = $this->getStorage();
-        $amazonS3 = $storage->getAmazonS3();
+        $amazonS3 = $this->getAmazonS3();
 
         $srcFileRef = $this->getFileAmazonComplexReference($srcFile);
         $destFileRef = $this->getFileAmazonComplexReference($destFile);
@@ -361,11 +361,14 @@ class Bucket extends BucketSubDirTemplate
             $destFileRef['bucket'] = $destBucket->getUrlName();
         }
 
-        $args = [
-            'Bucket' => $destFileRef['bucket'],
+        $args = ArrayHelper::merge(
+            [
+                'Bucket' => $destBucket->getName(),
             'Key' => $destFileRef['filename'],
-            'CopySource' => urlencode($srcFileRef['bucket'] . '/' . $srcFileRef['filename']),
-        ];
+                'CopySource' => urlencode($srcBucket->getName() . '/' . $srcFileRef['filename']),
+            ],
+            $metaData
+        );
 
         try {
             $amazonS3->copyObject($args);

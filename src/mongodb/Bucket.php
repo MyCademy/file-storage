@@ -221,7 +221,7 @@ class Bucket extends BaseBucket
     /**
      * {@inheritdoc}
      */
-    public function copyFileInternal($srcFile, $destFile)
+    public function copyFileInternal($srcFile, $destFile, $metaData = [])
     {
         if (is_array($srcFile)) {
             list($bucketName, $srcFileName) = $srcFile;

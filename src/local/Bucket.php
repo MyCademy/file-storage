@@ -300,7 +300,7 @@ class Bucket extends BucketSubDirTemplate
     /**
      * {@inheritdoc}
      */
-    public function copyFileInternal($srcFile, $destFile)
+    public function copyFileInternal($srcFile, $destFile, $metaData = [])
     {
         $srcFullFileName = $this->getFullFileNameByReference($srcFile);
         $destFullFileName = $this->getFullFileNameByReference($destFile);

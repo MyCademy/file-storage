@@ -282,7 +282,7 @@ class Bucket extends BucketSubDirTemplate
     /**
      * {@inheritdoc}
      */
-    public function copyFileInternal($srcFile, $destFile)
+    public function copyFileInternal($srcFile, $destFile, $metaData = [])
     {
         $srcFullFileName = $this->composeFullFileNameByReference($srcFile);
         $srcSftpFileName = $this->composeSftpPath($srcFullFileName);

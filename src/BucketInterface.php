@@ -117,9 +117,10 @@ interface BucketInterface
      * the second one - name of the file in this bucket
      * @param mixed $srcFile - this bucket existing file name or array reference to another bucket file name.
      * @param mixed $destFile - this bucket existing file name or array reference to another bucket file name.
+     * @param array $metaData - Meta data for file, implementation (if any) depends on bucket class
      * @return bool success.
      */
-    public function copyFileInternal($srcFile, $destFile);
+    public function copyFileInternal($srcFile, $destFile, $metaData = []);
 
     /**
      * Copies file from the OS file system into the bucket and
