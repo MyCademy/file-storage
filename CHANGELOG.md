@@ -2,7 +2,9 @@ Yii 2 File Storage extension Change Log
 =======================================
 
 1.3.0, December 5, 2021
-- Enh: Add support for `$metadata for Bucket::copyFileInternal()` (rhertogh)
+- Enh: Added support for `$metadata` for `mycademy\yii2filestorage\amazon\Bucket::copyFileInternal()` (rhertogh)
+- ENh: Added support for pre-signed urls for AWS `\mycademy\yii2filestorage\amazon\Bucket::getPresignedFileUrl()` (rhertogh)
+
 
 1.2.0, December 4, 2021 (Fork from https://github.com/yii2tech/file-storage)
 ------------------------
