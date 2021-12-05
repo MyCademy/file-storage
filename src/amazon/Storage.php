@@ -45,7 +45,7 @@ use mycademy\yii2filestorage\BaseStorage;
  * @see https://github.com/aws/aws-sdk-php
  * @see https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/welcome.html
  *
- * @method Bucket getBucket($bucketName)
+ * @method Bucket getBucket($bucketId)
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 1.0

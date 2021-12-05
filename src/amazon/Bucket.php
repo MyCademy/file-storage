@@ -7,8 +7,10 @@
 
 namespace mycademy\yii2filestorage\amazon;
 
+use Aws\Command;
 use Aws\S3\BatchDelete;
 use Aws\S3\S3Client;
+use yii\base\InvalidArgumentException;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
@@ -145,9 +147,16 @@ class Bucket extends BucketSubDirTemplate
     protected function getFileAmazonComplexReference($file)
     {
         if (is_array($file)) {
-            list($bucketName, $fileName) = $file;
+            if (ArrayHelper::isIndexed($file)) {
+                list($bucketName, $fileName) = $file;
+            } else {
+                if (count(array_intersect_key($file, array_flip(['bucket', 'filename']))) !== 2) {
+                    throw new InvalidArgumentException('If $file is an associative array, it must contain the keys "bucket" and "filename".');
+                }
+                return $file;
+            }
         } else {
-            $bucketName = $this->getName();
+            $bucketName = $this->getId();
             $fileName = $file;
         }
         $result = [
@@ -364,7 +373,7 @@ class Bucket extends BucketSubDirTemplate
         $args = ArrayHelper::merge(
             [
                 'Bucket' => $destBucket->getName(),
-            'Key' => $destFileRef['filename'],
+                'Key' => $destFileRef['filename'],
                 'CopySource' => urlencode($srcBucket->getName() . '/' . $srcFileRef['filename']),
             ],
             $metaData

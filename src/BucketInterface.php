@@ -19,6 +19,19 @@ namespace mycademy\yii2filestorage;
 interface BucketInterface
 {
     /**
+     * Sets bucket id.
+     * @param string $id - bucket id.
+     * @return bool success.
+     */
+    public function setId($id);
+
+    /**
+     * Gets current bucket id.
+     * @return string $id - bucket id.
+     */
+    public function getId();
+
+    /**
      * Sets bucket name.
      * @param string $name - bucket name.
      * @return bool success.

@@ -108,20 +108,21 @@ abstract class BaseStorage extends Component implements StorageInterface
     /**
      * {@inheritdoc}
      */
-    public function getBucket($bucketName)
+    public function getBucket($bucketId)
     {
-        if (!array_key_exists($bucketName, $this->_buckets)) {
-            throw new InvalidParamException("Bucket named '{$bucketName}' does not exists in the file storage '" . get_class($this) . "'");
+        if (!array_key_exists($bucketId, $this->_buckets)) {
+            throw new InvalidParamException("Bucket with id '{$bucketId}' does not exists in the file storage '" . get_class($this) . "'");
         }
-        $bucketData = $this->_buckets[$bucketName];
+        $bucketData = $this->_buckets[$bucketId];
         if (is_object($bucketData)) {
             $bucketInstance = $bucketData;
         } else {
+            $bucketData['id'] = $bucketId;
             if (!array_key_exists('name' , $bucketData)) {
-                $bucketData['name'] = $bucketName;
+                $bucketData['name'] = $bucketId;
             }
             $bucketInstance = $this->createBucketInstance($bucketData);
-            $this->_buckets[$bucketName] = $bucketInstance;
+            $this->_buckets[$bucketId] = $bucketInstance;
         }
         return $bucketInstance;
     }
@@ -129,27 +130,27 @@ abstract class BaseStorage extends Component implements StorageInterface
     /**
      * {@inheritdoc}
      */
-    public function addBucket($bucketName, $bucketData = [])
+    public function addBucket($bucketId, $bucketData = [])
     {
-        if (!is_string($bucketName)) {
+        if (!is_string($bucketId)) {
             throw new InvalidParamException('Name of the bucket should be a string!');
         }
         if (is_scalar($bucketData)) {
             throw new InvalidParamException('Data of the bucket should be an bucket object or configuration array!');
         }
         if (is_object($bucketData)) {
-            $bucketData->setName($bucketName);
+            $bucketData->setName($bucketId);
         }
-        $this->_buckets[$bucketName] = $bucketData;
+        $this->_buckets[$bucketId] = $bucketData;
         return true;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function hasBucket($bucketName)
+    public function hasBucket($bucketId)
     {
-        return array_key_exists($bucketName, $this->_buckets);
+        return array_key_exists($bucketId, $this->_buckets);
     }
 
     /**

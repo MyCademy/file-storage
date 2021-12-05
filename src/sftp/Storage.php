@@ -45,7 +45,7 @@ use mycademy\yii2filestorage\BaseStorage;
  * @see Connection
  *
  * @property resource $sftp related SFTP subsystem session.
- * @method Bucket getBucket($bucketName)
+ * @method Bucket getBucket($bucketId)
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 1.1.0

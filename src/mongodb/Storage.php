@@ -51,7 +51,7 @@ use mycademy\yii2filestorage\BaseStorage;
  * @see http://docs.mongodb.org/manual/core/gridfs/
  * @see \mycademy\yii2filestorage\DownloadAction
  *
- * @method Bucket getBucket($bucketName)
+ * @method Bucket getBucket($bucketId)
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 1.1.0

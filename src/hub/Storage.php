@@ -200,36 +200,36 @@ class Storage extends Component implements StorageInterface
     /**
      * {@inheritdoc}
      */
-    public function getBucket($bucketName)
+    public function getBucket($bucketId)
     {
         $storagesList = $this->_storages;
         foreach ($storagesList as $storageName => $storageData) {
             $storage = $this->getStorage($storageName);
-            if ($storage->hasBucket($bucketName)) {
-                return $storage->getBucket($bucketName);
+            if ($storage->hasBucket($bucketId)) {
+                return $storage->getBucket($bucketId);
             }
         }
-        throw new InvalidParamException("Bucket named '{$bucketName}' does not exists in any file storage of the hub '" . get_class($this) . "'");
+        throw new InvalidParamException("Bucket named '{$bucketId}' does not exists in any file storage of the hub '" . get_class($this) . "'");
     }
 
     /**
      * {@inheritdoc}
      */
-    public function addBucket($bucketName, $bucketData = [])
+    public function addBucket($bucketId, $bucketData = [])
     {
         $storage = $this->getDefaultStorage();
-        return $storage->addBucket($bucketName, $bucketData);
+        return $storage->addBucket($bucketId, $bucketData);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function hasBucket($bucketName)
+    public function hasBucket($bucketId)
     {
         $storagesList = $this->_storages;
         foreach ($storagesList as $storageName => $storageData) {
             $storage = $this->getStorage($storageName);
-            if ($storage->hasBucket($bucketName)) {
+            if ($storage->hasBucket($bucketId)) {
                 return true;
             }
         }

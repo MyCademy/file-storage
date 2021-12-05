@@ -33,25 +33,25 @@ interface StorageInterface
 
     /**
      * Gets the bucket instance by name.
-     * @param string $bucketName - name of the bucket.
+     * @param string $bucketId - name of the bucket.
      * @return BucketInterface bucket instance.
      */
-    public function getBucket($bucketName);
+    public function getBucket($bucketId);
 
     /**
      * Adds the bucket to the buckets list.
-     * @param string $bucketName - name of the bucket.
+     * @param string $bucketId - name of the bucket.
      * @param mixed $bucketData - bucket instance or configuration array.
      * @return bool success.
      */
-    public function addBucket($bucketName, $bucketData = []);
+    public function addBucket($bucketId, $bucketData = []);
 
     /**
      * Indicates if the bucket has been set up in the storage.
-     * @param string $bucketName - name of the bucket.
+     * @param string $bucketId - name of the bucket.
      * @return bool success.
      */
-    public function hasBucket($bucketName);
+    public function hasBucket($bucketId);
 
     /**
      * Sets the base URL, which should be used by [[BucketInterface::getFileUrl()]].

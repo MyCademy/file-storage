@@ -24,6 +24,10 @@ use yii\log\Logger;
 abstract class BaseBucket extends BaseObject implements BucketInterface
 {
     /**
+     * @var string bucket id.
+     */
+    private $_id = '';
+    /**
      * @var string bucket name.
      */
     private $_name = '';
@@ -49,8 +53,28 @@ abstract class BaseBucket extends BaseObject implements BucketInterface
         if (!YII_DEBUG && $level === Logger::LEVEL_INFO) {
             return;
         }
-        $category = get_class($this) . '(' . $this->getName() . ')';
+        $category = get_class($this) . '(' . $this->getId() . ')';
         Yii::getLogger()->log($message, $level, $category);
+    }
+
+    /**
+     * Sets bucket id.
+     * @param string $id - bucket id.
+     * @return bool success.
+     */
+    public function setId($id)
+    {
+        $this->_id = $id;
+        return true;
+    }
+
+    /**
+     * Gets current bucket id.
+     * @return string $id - bucket id.
+     */
+    public function getId()
+    {
+        return $this->_id;
     }
 
     /**

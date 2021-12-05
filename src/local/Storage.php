@@ -38,7 +38,7 @@ use mycademy\yii2filestorage\BaseStorage;
  * @see Bucket
  *
  * @property string $basePath file system path, which is basic for all buckets.
- * @method Bucket getBucket($bucketName)
+ * @method Bucket getBucket($bucketId)
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 1.0
