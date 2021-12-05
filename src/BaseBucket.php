@@ -160,6 +160,15 @@ abstract class BaseBucket extends BaseObject implements BucketInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getPreSignedFileUrl($fileName, $expires = '+10 minutes')
+    {
+        // Return `getFileUrl` by default, bucket types that support pre-signed URLs can overwrite this.
+        return $this->getFileUrl($fileName);
+    }
+
+    /**
      * Composes file URL from the base URL and filename.
      * This method is invoked at [[getFileUrl()]] in case base URL does not specify a URL route.
      * @param string|null $baseUrl storage base URL.

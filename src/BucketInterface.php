@@ -173,6 +173,21 @@ interface BucketInterface
     public function getFileUrl($fileName);
 
     /**
+     * Create a pre-signed URL of the file. Implementation (if any) depends on bucket class
+     * If the bucket class doesn't support pre-signed URLs the same URL as `getFileUrl` is returned.
+     *
+     * @param string $fileName - self file name.
+     * @param int|string|\DateTimeInterface $expires The time at which the URL should
+     *                                               expire. This can be a Unix
+     *                                               timestamp, a PHP DateTime object,
+     *                                               or a string that can be evaluated
+     *                                               by strtotime().
+     *
+     * @return string pre-signed web URL that gives access to the file.
+     */
+    public function getPreSignedFileUrl($fileName, $expires = '+10 minutes');
+
+    /**
      * Opens a file as stream resource, e.g. like `fopen()` function.
      * @param string $fileName - file name.
      * @param string $mode - the type of access you require to the stream, e.g. `r`, `w`, `a` and so on.
